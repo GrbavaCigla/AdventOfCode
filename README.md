@@ -35,6 +35,8 @@ Files:
 2.py
 1.cpp
 2.cpp
+1.rs
+2.rs
 ```
 ## Day 3
 Skip first y lines (y is steps down) with steps y like this:
