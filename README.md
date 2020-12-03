@@ -33,7 +33,7 @@ Loop through `new_lines` and add x to counter (x is steps right, counter is curr
 xcount += x
 ```
 And next check if there is a tree
-```
+```python
 current_spot = line[xcount % limit]
 ans += 1 if current_spot == "#" else 0
 ```
