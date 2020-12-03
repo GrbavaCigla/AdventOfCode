@@ -6,6 +6,13 @@ C++ solutions by Maksim Bjelić.
  - Smart way - 2-pointer algorithm O(N) and second part 3-pointer algorithm O(N^2)
  - Bruteforce way - brute force O(N^2) and O(N^3), but it doesn't matter input is small
 
+
+<details>
+  <summary>Spoiler warning</summary>
+    Part 1: 1020084<br />
+    Part 2: 295086480
+</details>
+
 Files:
 ```
 1-smart.py  
@@ -15,6 +22,12 @@ Files:
 ```
 ## Day 2
 Go through each line and check if it is valid, nothing special here
+
+<details>
+  <summary>Spoiler warning</summary>
+    Part 1: 439<br />
+    Part 2: 584
+</details>
 
 Files:
 ```
@@ -38,6 +51,12 @@ current_spot = line[xcount % limit]
 ans += 1 if current_spot == "#" else 0
 ```
 And that should be it, everything else is easy.
+
+<details>
+  <summary>Spoiler warning</summary>
+  Part 1: 299<br />
+  Part 2: 3621285278
+</details>
 
 Files:
 ```
