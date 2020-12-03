@@ -23,3 +23,24 @@ Files:
 1.cpp
 2.cpp
 ```
+## Day 3
+Skip first y lines (y is steps down) with steps y like this:
+```python
+new_lines = lines[y::y]
+```
+Loop through `new_lines` and add x to counter (x is steps right, counter is current x coordinate)
+```python
+xcount += x
+```
+And next check if there is a tree
+```
+current_spot = line[xcount % limit]
+ans += 1 if current_spot == "#" else 0
+```
+And that should be it, everything else is easy.
+
+Files:
+```
+1.py
+2.py
+```
