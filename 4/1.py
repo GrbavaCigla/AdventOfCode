@@ -1,5 +1,3 @@
-import re
-
 with open("input", "r") as file:
     text = file.read().split('\n\n')
     text = [i.replace('\n', ' ') for i in text]
