@@ -82,6 +82,7 @@ Files:
 ```
 1.py
 2.py
+1.rs
 ```
 
 ## Day 5
