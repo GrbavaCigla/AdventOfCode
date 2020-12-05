@@ -79,3 +79,19 @@ Files:
 1.py
 2.py
 ```
+
+## Day 5
+Decode the seat in the first part with given instructions.
+In second part, go through sorted ids and find one with gap.
+
+<details>
+  <summary>Spoiler warning</summary>
+    Part 1: 858<br />
+    Part 2: 557
+</details>
+
+Files:
+```
+1.py
+2.py
+```
