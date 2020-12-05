@@ -9,7 +9,7 @@ def two_point(values: list, target: int):
     
     for i in values:
         while end > start:
-            cur_sum = i+values[start] + values[end]
+            cur_sum = i + cvalues[start] + values[end]
 
             if cur_sum == target:
                 return i, values[start], values[end]
