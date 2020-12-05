@@ -65,3 +65,17 @@ Files:
 1.py
 2.py
 ```
+## Day 4
+Similar to second day, but with more rules
+
+<details>
+  <summary>Spoiler warning</summary>
+    Part 1: 250<br />
+    Part 2: 158
+</details>
+
+Files:
+```
+1.py
+2.py
+```
