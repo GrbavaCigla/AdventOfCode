@@ -27,5 +27,4 @@ def decode_seat(seat: str):
     return ans1*8+ans2
 
 ids = [decode_seat(i) for i in text]
-print(ids)
 print(max(ids))
