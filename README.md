@@ -19,6 +19,8 @@ Files:
 1-stupid.py  
 2-smart.py  
 2-stupid.py
+1.rs
+2.rs
 ```
 ## Day 2
 Go through each line and check if it is valid, nothing special here
@@ -64,6 +66,8 @@ Files:
 ```
 1.py
 2.py
+1.rs
+2.rs
 ```
 ## Day 4
 Similar to second day, but with more rules
