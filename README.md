@@ -102,3 +102,13 @@ Files:
 1.rs
 2.rs
 ```
+
+# Day 6
+First part is done in six lines and it is really easy so I am not going to discuss it.
+For second part I used a set and intersect for people in group.
+
+<details>
+  <summary>Spoiler warning</summary>
+    Part 1: 6430<br />
+    Part 2: 3125
+</details>
