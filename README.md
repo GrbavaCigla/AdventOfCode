@@ -103,7 +103,7 @@ Files:
 2.rs
 ```
 
-# Day 6
+## Day 6
 First part is done in six lines and it is really easy so I am not going to discuss it.
 For second part I used a set and intersect for people in group.
 
