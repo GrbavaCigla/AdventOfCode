@@ -112,3 +112,9 @@ For second part I used a set and intersect for people in group.
     Part 1: 6430<br />
     Part 2: 3125
 </details>
+
+Files:
+```
+1.py
+2.py
+```
