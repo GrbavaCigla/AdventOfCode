@@ -66,6 +66,8 @@ Files:
 ```
 1.py
 2.py
+1.cpp
+2.cpp
 1.rs
 2.rs
 ```
