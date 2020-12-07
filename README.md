@@ -1,6 +1,8 @@
 # AoC2020
 Advent of Code 2020. Sadly I lost 2019 and 2018 :(  
-**_C++ solutions by Maksim Bjelić._**
+_C++ solutions by Maksim Bjelić._  
+**DISCLAIMER: I noticed that everyone is getting different inputs so spoiler warning is a little bit useless**
+
 
 ## Day 1
  - Smart way - 2-pointer algorithm O(N) and second part 3-pointer algorithm O(N^2)
