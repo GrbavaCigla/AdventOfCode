@@ -8,7 +8,8 @@ def in_bag(bags, bag):
 
     return False
 
-def grepit(bags, target, total=0, bamount=1):
+total = 0
+def grepit(bags, target, bamount=1):
     bag = re.findall(r"[a-z]+ [a-z]+", target)[0]
     amount = int(re.findall(r"\d+", target)[0])*bamount
     inner = bags[bag]
@@ -16,6 +17,7 @@ def grepit(bags, target, total=0, bamount=1):
     if not inner:
         return amount
 
+    global total
     total += amount
     return [grepit(bags, i, amount) for i in inner]
 
