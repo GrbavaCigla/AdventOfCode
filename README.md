@@ -123,7 +123,7 @@ Files:
 
 ## Day 7
 Both parts are done recursively.  
-In first part I made dict out of bags. Next I found bags which contain shiny gold and recursively find which bags contain those bags...
+In first part I made dict out of bags. Next I found bags which contain shiny gold and recursively find which bags contain those bags...  
 Second is pretty ugly and bad. Dict made it easier, so again, recursive solution.
 
 <details>
