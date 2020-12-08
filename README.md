@@ -139,3 +139,19 @@ Files:
 1.py
 2.py
 ```
+
+## Day 8
+In the first part I just checked if instruction is executed before.
+In the second part I looped through all instructions checking if current instruction is jmp and replacing it with nop.
+
+<details>
+  <summary>Spoiler warning</summary>
+    Part 1: 2003<br />
+    Part 2: 1984
+</details>
+
+Files:
+```
+1.py
+2.py
+```
