@@ -1,6 +1,7 @@
 # AoC2020
 Advent of Code 2020. Sadly I lost 2019 and 2018 :(  
 _C++ solutions by Maksim Bjelić._  
+I will push solutions for 9 an 10 soon!  
 **DISCLAIMER: I noticed that everyone is getting different inputs so spoiler warning is a little bit useless**
 
 
