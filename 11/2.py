@@ -1,35 +1,45 @@
-from pprint import pprint
-from time import sleep
-
-with open("smallput", "r") as file:
-    text = file.read().replace("L", "#").splitlines()
+with open("input", "r") as file:
+    text = file.read().splitlines()
 
 def get_surround(text, x, y):
-    surround = text[y][0] + text[y][-1]
-    xs = ''.join([text[i][x] for i in range(len(text))])
-    xs = xs[0] + xs[-1]
-    surround += xs
+    surround = ""
 
     xlower = -1 if x > 0 else 0
     ylower = -1 if y > 0 else 0
 
-    for i in range(xlower, 2, 2):
-        for j in range(ylower, 2, 2):
+    for i in range(xlower, 2):
+        for j in range(ylower, 2):
             if i == 0 and j == 0:
                 continue
             
-            try:
-                surround += text[y+j][x+i]
-            except:
-                pass
+            cur = '.'
+            xcount = x
+            ycount = y
 
+            while cur == '.':
+                xcount += i
+                ycount += j
+
+                if xcount < 0 or ycount < 0:
+                    break
+                
+                if xcount == x and ycount == y:
+                    continue
+
+                try:
+                    cur = text[ycount][xcount]
+                except:
+                    break
+                
+            surround += cur
+
+            
     return surround
-
+    
 
 while True:
     seats = text.copy()
 
-    print("ADWADAWDAWDAWDAWD")
     for y in range(len(text)):
 
         ystr = ""
@@ -51,11 +61,9 @@ while True:
 
             ystr += text[y][x]
 
-        print(ystr)
         seats[y] = ystr
     
-    # print(sum([i.count('#') for i in seats]))
+    print(sum([i.count('#') for i in seats]))
 
     del text
     text = seats.copy()
-    sleep(1)

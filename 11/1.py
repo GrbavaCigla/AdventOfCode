@@ -20,6 +20,8 @@ def get_surround(text, x, y):
                 pass
 
     return surround
+
+
 while True:
     seats = text.copy()
 
