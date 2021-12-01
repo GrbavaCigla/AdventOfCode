@@ -2,43 +2,42 @@ use std::error::Error;
 use std::fs::File;
 use std::io::{prelude::*, BufReader};
 
-fn main() -> Result<(), Box<dyn Error>> {
-    let file = File::open("./1/input")?;
-    let reader = BufReader::new(file);
 
+fn solve(numbers: &Vec<u32>, group_size: usize) -> u32 {
     let mut ans = 0;
 
-    let lines: Vec<i32> = reader
-        .lines()
-        .map(|x| x.unwrap().parse().unwrap())
-        .collect();
-
-    let mut prev: i32 = lines[0];
-
-    for num in lines.iter() {
-        if *num > prev {
-            ans += 1;
-        }
-        prev = *num;
+    let mut prevsum = 0;
+    for i in 0..group_size {
+        prevsum += numbers[i];
     }
 
-    println!("First part result: {}", ans);
-
-    ans = 0;
-    let mut prevsum = lines[0] + lines[1] + lines[2];
-
-    for (i, num) in lines.iter().enumerate().skip(3) {
-        let cursum = num + lines[i - 1] + lines[i - 2];
+    for i in group_size..numbers.len() {
+        let mut cursum = 0;
+        for j in 0..group_size {
+            cursum += numbers[i - j];
+        }
 
         if cursum > prevsum {
             ans += 1;
         }
 
         prevsum = cursum;
-
     }
 
-    println!("Second part result: {}", ans);
+    ans
+}
+
+fn main() -> Result<(), Box<dyn Error>> {
+    let file = File::open("./1/input")?;
+    let reader = BufReader::new(file);
+
+    let lines: Vec<u32> = reader
+        .lines()
+        .map(|x| x.unwrap().parse().unwrap())
+        .collect();
+
+    println!("First part result: {}", solve(&lines, 1));
+    println!("Second part result: {}", solve(&lines, 3));
 
     Ok(())
 }
