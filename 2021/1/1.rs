@@ -1,8 +1,3 @@
-use std::error::Error;
-use std::fs::File;
-use std::io::{prelude::*, BufReader};
-
-
 fn solve(numbers: &Vec<u32>, group_size: usize) -> u32 {
     let mut ans = 0;
 
@@ -27,17 +22,12 @@ fn solve(numbers: &Vec<u32>, group_size: usize) -> u32 {
     ans
 }
 
-fn main() -> Result<(), Box<dyn Error>> {
-    let file = File::open("./1/input")?;
-    let reader = BufReader::new(file);
-
-    let lines: Vec<u32> = reader
-        .lines()
-        .map(|x| x.unwrap().parse().unwrap())
+fn main() {
+    let lines: Vec<u32> = include_str!("./input")
+        .split('\n')
+        .filter_map(|x| x.parse().ok())
         .collect();
 
     println!("First part result: {}", solve(&lines, 1));
     println!("Second part result: {}", solve(&lines, 3));
-
-    Ok(())
 }
