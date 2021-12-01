@@ -1,3 +1,7 @@
+
+// This can be much improved
+// Instead of addition, I can compare elements first and last elements instead
+// Also using zip, filter, count... would decrease code size significantly
 fn solve(numbers: &Vec<u32>, group_size: usize) -> u32 {
     let mut ans = 0;
 
