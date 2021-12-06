@@ -1,0 +1,9 @@
+[package]
+name = "day4"
+version = "0.1.0"
+authors = ["GrbavaCigla <alexa.ognjanovic@protonmail.com>"]
+edition = "2018"
+
+[[bin]]
+name = "4"
+path = "4.rs"

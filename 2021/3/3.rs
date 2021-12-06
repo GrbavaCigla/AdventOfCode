@@ -1,46 +1,55 @@
-fn filter_out(input: &Vec<&str>, start: usize, length: usize) -> Option<(u32, u32)> {
-    let mut epsilon = String::new();
-    let mut gamma = String::new();
+fn filter(nums: &Vec<&str>, index: usize, greater: bool) -> u32 {
+    let ones = nums
+        .iter()
+        .map(|y| y.chars().nth(index).unwrap())
+        .filter(|&z| z == '1')
+        .count();
 
-    for i in start..length {
-        let zeros = input
-            .iter()
-            .map(|x| x.chars().nth(i))
-            .filter(|x| x == &Some('0'))
-            .count();
-
-        let ones = length - zeros;
-
-        println!("1: {} - 0: {}", ones, zeros);
-
-        if ones > zeros {
-            epsilon.push('1');
-            gamma.push('0');
-        } else if ones < zeros {
-            epsilon.push('0');
-            gamma.push('1');
-        } else {
-            epsilon.push('1');
-            gamma.push('0');
-        }
-    }
-
-    let epsilon = u32::from_str_radix(&epsilon, 2).ok();
-    let gamma = u32::from_str_radix(&gamma, 2).ok();
-
-    if epsilon.is_some() && gamma.is_some() {
-        return Some((epsilon.unwrap(), gamma.unwrap()));
+    if greater {
+        return (ones as f32 >= nums.len() as f32 / 2.0) as u32;
     } else {
-        return None;
+        return !(ones as f32 >= nums.len() as f32 / 2.0) as u32;
     }
 }
 
+fn second_part(input: &Vec<&str>, greater: bool) -> Option<u32> {
+    let mut filtered: Vec<&str> = input.clone();
+    let mut curr = String::from("");
+
+    for i in 0..input[0].len() {
+        let curr_digit = filter(&filtered, i, greater);
+        curr.push_str(&curr_digit.to_string());
+
+        filtered = filtered
+            .iter()
+            .filter(|x| x.starts_with(&curr))
+            .cloned()
+            .collect();
+
+        if filtered.len() == 1 {
+            return u32::from_str_radix(filtered[0], 2).ok();
+        }
+    }
+
+    None
+}
+
 fn main() {
-    let mut input: Vec<&str> = include_str!("./input").lines().collect();
-    input.sort();
+    let input: Vec<&str> = include_str!("./input").lines().collect();
 
-    let first = filter_out(&input, 0, input.len());
+    let epsilon = (0..input[0].len()).fold(String::new(), |acc, x| {
+        format!("{}{}", acc, filter(&input, x, true))
+    });
 
-    println!("First part result: {}", first.unwrap().1 * first.unwrap().0);
+    let epsilon = u32::from_str_radix(&epsilon, 2).unwrap();
 
+    println!(
+        "First part result: {}",
+        epsilon * (!epsilon & ((1 << input[0].len()) - 1))
+    );
+
+    println!(
+        "Second part result: {}",
+        second_part(&input, true).unwrap() * second_part(&input, false).unwrap()
+    );
 }
