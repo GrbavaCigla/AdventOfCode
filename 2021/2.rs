@@ -1,5 +1,5 @@
 fn main() {
-    let input: Vec<(&str, u32)> = include_str!("./input")
+    let input: Vec<(&str, u32)> = include_str!("./inputs/2")
         .split('\n')
         .map(|x| x.split_whitespace().collect())
         .filter(|x: &Vec<&str>| x.len() == 2)

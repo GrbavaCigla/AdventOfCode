@@ -27,7 +27,7 @@ fn solve(numbers: &Vec<u32>, group_size: usize) -> u32 {
 }
 
 fn main() {
-    let lines: Vec<u32> = include_str!("./input")
+    let lines: Vec<u32> = include_str!("./inputs/1")
         .split('\n')
         .filter_map(|x| x.parse().ok())
         .collect();

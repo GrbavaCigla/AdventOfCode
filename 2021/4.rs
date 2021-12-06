@@ -22,7 +22,7 @@ fn is_winner(board: &[u32], marked: &[u32]) -> Option<Vec<u32>> {
 }
 
 fn main() {
-    let input = include_str!("./input").split_once("\n").unwrap();
+    let input = include_str!("./inputs/4").split_once("\n").unwrap();
 
     let marked: Vec<u32> = input.0.split(",").filter_map(|x| x.parse().ok()).collect();
 

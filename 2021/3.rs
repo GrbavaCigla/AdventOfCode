@@ -35,7 +35,7 @@ fn second_part(input: &Vec<&str>, greater: bool) -> Option<u32> {
 }
 
 fn main() {
-    let input: Vec<&str> = include_str!("./input").lines().collect();
+    let input: Vec<&str> = include_str!("./inputs/3").lines().collect();
 
     let epsilon = (0..input[0].len()).fold(String::new(), |acc, x| {
         format!("{}{}", acc, filter(&input, x, true))

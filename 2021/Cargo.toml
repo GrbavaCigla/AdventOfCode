@@ -1,3 +1,21 @@
-[workspace]
-members = ["1", "2", "3", "4"]
-default-members = ["3"]
+[package]
+name = "aoc2021"
+version = "0.1.0"
+authors = ["GrbavaCigla <alexa.ognjanovic@protonmail.com>"]
+edition = "2018"
+
+[[bin]]
+name = "day1"
+path = "1.rs"
+
+[[bin]]
+name = "day2"
+path = "2.rs"
+
+[[bin]]
+name = "day3"
+path = "3.rs"
+
+[[bin]]
+name = "day4"
+path = "4.rs"
