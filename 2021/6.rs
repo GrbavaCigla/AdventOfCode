@@ -12,6 +12,9 @@ fn next_day(state: &mut [u64]) {
 
 fn main() {
     let mut lanternfishes = include_str!("./inputs/6")
+        .lines()
+        .next()
+        .unwrap()
         .split(",")
         .map(|x| x.parse().unwrap())
         .fold([0; 9], |acc, x: usize| {
