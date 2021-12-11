@@ -69,21 +69,6 @@ fn next_step(input: &mut Vec<u32>) -> u32 {
     flashes_count
 }
 
-fn print_octo(input: &Vec<u32>) {
-    for (i, energy) in input.iter().enumerate() {
-        if *energy > 9 {
-            print!("^");
-        } else {
-            print!("{}", energy);
-        }
-        if (i + 1) % WIDTH == 0 {
-            println!();
-        }
-    }
-    println!();
-
-}
-
 fn main() {
     let mut input: Vec<u32> = include_str!("./inputs/11")
         .lines()
