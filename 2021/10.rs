@@ -1,17 +1,19 @@
+use std::collections::VecDeque;
+
 const OPEN_BRACKETS: [char; 4] = ['(', '[', '{', '<'];
 const CLOSE_BRACKETS: [char; 4] = [')', ']', '}', '>'];
 const POINTS: [u64; 4] = [3, 57, 1197, 25137];
 
 fn solve(x: &str, part1: bool) -> u64 {
-    let mut stack = vec![];
+    let mut stack = VecDeque::new();
 
     for i in x.chars() {
         if OPEN_BRACKETS.contains(&i) {
-            stack.push(i);
+            stack.push_back(i);
         } else if CLOSE_BRACKETS.contains(&i) {
             let index = CLOSE_BRACKETS.iter().position(|&x| x == i).unwrap();
 
-            if stack.pop().unwrap() != OPEN_BRACKETS[index] {
+            if stack.pop_back().unwrap() != OPEN_BRACKETS[index] {
                 if part1 {
                     return POINTS[index];
                 } else {
