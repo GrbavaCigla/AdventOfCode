@@ -68,5 +68,7 @@ name = "day14"
 path = "14.rs"
 
 [[bin]]
-name = "day15"
-path = "15.rs"
+name = "day16"
+path = "16.rs"
+
+# TODO: Complete 15th day when I have more time
